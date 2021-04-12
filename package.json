@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
+    "element-ui": "^2.15.1",
     "vue": "^2.6.11",
     "vue-router": "^3.4.9",
     "vuex": "^3.6.0"
@@ -35,7 +36,10 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "no-debugger": 0,
+      "no-empty": 0
+    }
   },
   "browserslist": [
     "> 1%",
