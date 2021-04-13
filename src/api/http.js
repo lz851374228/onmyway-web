@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-04-09 15:09:49
- * @LastEditTime: 2021-04-13 10:41:29
+ * @LastEditTime: 2021-04-13 17:56:07
  * @LastEditors: Please set LastEditors
  * @Description: axios封装
  * @FilePath: \onmyway-web\src\api\http.js
@@ -14,20 +14,25 @@ import { Notification } from 'element-ui';
 
 // 配置请求地址公共部分
 if (process.env.NODE_ENV === 'development') {
-  axios.defaults.baseURL = 'http://localhost'
+  axios.defaults.baseURL = 'http://localhost:8088/onmyway/web'
 } else if (process.env.NODE_ENV === 'debug') {
   axios.defaults.baseURL = ''
 } else if (process.env.NODE_ENV === 'production') {
   axios.defaults.baseURL = ''
 }
 
-// 请求超时时间
-axios.defaults.timeout = 5000;
-// post请求头
-axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
+// 创建axios实例
+const service = axios.create({
+  baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
+  // withCredentials: true, // send cookies when cross-domain requests
+  timeout: 5000, // request timeout
+  headers:{
+    'Content-Type':'application/json;charset=UTF-8'
+  }
+})
 
 // 请求拦截器
-axios.interceptors.request.use(
+service.interceptors.request.use(
   config => {
     // 每次发送请求之前判断是否存在token，如果存在，则统一在http请求的header都加上token，不用每次请求都手动添加了
     // 此处将token存放在Vuex中，进行查询和保存。
@@ -43,7 +48,7 @@ axios.interceptors.request.use(
 )
 
 // 响应拦截器
-axios.interceptors.response.use(
+service.interceptors.response.use(
   response => {
     if (response.status === 200) {
       return Promise.resolve(response);
@@ -53,7 +58,6 @@ axios.interceptors.response.use(
   },
   // 服务器状态码不是200的情况
   error => {
-    debugger
     // Network Error:网络连接失败。
     // 服务器连接失败，跳转至服务器连接失败显示界面。
     // 在服务器连接成功后返回当前页面
@@ -138,4 +142,4 @@ axios.interceptors.response.use(
     return Promise.reject(error.response);
   }
 );
-export default axios
+export default service
