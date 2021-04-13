@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-04-09 15:28:11
- * @LastEditTime: 2021-04-12 18:00:24
+ * @LastEditTime: 2021-04-13 10:39:55
  * @LastEditors: Please set LastEditors
  * @Description: 请求方法封装
  * @FilePath: \onmyway-web\src\api\request.js
@@ -38,5 +38,3 @@ export function post(url, params) {
             })
     });
 }
-
-export default axios

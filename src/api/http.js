@@ -1,14 +1,14 @@
 /*
  * @Author: your name
  * @Date: 2021-04-09 15:09:49
- * @LastEditTime: 2021-04-12 18:00:03
+ * @LastEditTime: 2021-04-13 10:41:29
  * @LastEditors: Please set LastEditors
  * @Description: axios封装
  * @FilePath: \onmyway-web\src\api\http.js
  */
 import axios from 'axios'
-import store from '../store'
 import router from '../router';
+import store from '../store'
 import { getToken } from '../utils/user'
 import { Notification } from 'element-ui';
 
@@ -53,6 +53,7 @@ axios.interceptors.response.use(
   },
   // 服务器状态码不是200的情况
   error => {
+    debugger
     // Network Error:网络连接失败。
     // 服务器连接失败，跳转至服务器连接失败显示界面。
     // 在服务器连接成功后返回当前页面
