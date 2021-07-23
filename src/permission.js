@@ -1,9 +1,9 @@
 /*
- * @Author: your name
+ * @Author: Zheng Li
  * @Date: 2021-04-09 16:05:48
- * @LastEditTime: 2021-04-13 17:45:47
+ * @LastEditTime: 2021-07-20 10:30:48
  * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
+ * @Description: 路由权限控制,是否拥有token,目标路由是否在白名单内,是否
  * @FilePath: \onmyway-web\src\permission.js
  */
 import router from './router'
@@ -27,7 +27,7 @@ router.beforeEach(async (to, from, next) => {
         if (to.path === '/login') {
             // if is logged in, redirect to the home page
             next({ path: '/' })
-            NProgress.done() // hack: https://github.com/PanJiaChen/vue-element-admin/pull/2939
+            NProgress.done()
         } else {
             // determine whether the user has obtained his permission roles through getInfo
             const hasRoles = store.getters.roles && store.getters.roles.length > 0

@@ -1,7 +1,7 @@
 /*
- * @Author: your name
+ * @Author: Zheng Li
  * @Date: 2021-04-12 15:09:35
- * @LastEditTime: 2021-04-13 17:58:06
+ * @LastEditTime: 2021-07-20 09:54:15
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \onmyway-web\src\api\modules\user.js

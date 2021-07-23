@@ -1,7 +1,7 @@
 /*
- * @Author: your name
+ * @Author: Zheng Li
  * @Date: 2021-04-12 11:25:46
- * @LastEditTime: 2021-04-13 15:32:04
+ * @LastEditTime: 2021-07-20 10:27:43
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \onmyway-web\vue.config.js
@@ -19,7 +19,7 @@ module.exports = {
   lintOnSave: process.env.NODE_ENV === 'development',//是否在开发环境下通过 eslint-loader 在每次保存时 lint 代码
   productionSourceMap: false,//设置为 false 以加速生产环境构建
   devServer: {
-    port: 8088,//指定端口号
+    port: 8000,//指定端口号
     host:"0.0.0.0",//指定要使用的主机。如果您希望服务器可以从外部访问，请按以0.0.0.0方式指定它
     open: true,//告诉dev-server在服务器启动后打开浏览器。将其设置true为打开默认浏览器
     hot: true,

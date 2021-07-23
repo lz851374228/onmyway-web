@@ -1,7 +1,7 @@
 /*
- * @Author: your name
+ * @Author: Zheng Li
  * @Date: 2021-04-12 15:44:48
- * @LastEditTime: 2021-04-13 16:45:23
+ * @LastEditTime: 2021-07-20 09:53:18
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \onmyway-web\src\store\index.js
